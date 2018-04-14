@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+/* Site Layout */
+html { height: 100%;  margin-bottom: 1px; }
+
+body {
+    background:url("assets/Images/Structure/retro_background.gif") repeat fixed 50% 0 #EFEFEF;
+    height: 100%; margin: 0 auto; color:#333333; 
+    font-family:Georgia,"Times New Roman",Times,serif; font-size:70%; }
+
+#main { margin: 0px auto; padding: 0px; border:0; width: 840px; }
+#background { background-position: left top; background: url(assets/images/Structure/background.gif) repeat left top; }
+#header { margin-top : 10px; height: 60px; }
+
+#headerSummary{
+    background:none repeat scroll 0 0 #EEEEEE;    
+    border-bottom:1px solid #CCCCCC; clear:both; display:block; margin:auto;    
+    overflow:auto; width:840px; height: 30px; }
+
+#navigation {
+    float: left; width: 158px; margin-left:5px; padding-top:1em; margin-bottom:50px;    
+    height : 100%;}
+
+#content {		
+    margin: 0; float: left; width: 665px; margin-left:5px; margin-right:5px;
+    padding-top:1em;}
+
+.navigation-items{ padding:10px; margin:10px; }
+
+#basketSummary{ width: 300px; float: right; }
+
+#footer {
+   clear: both; text-align : center; background:none repeat scroll 0 0 #FFF2D9;    
+   padding: 20px 0 0px 0px; height: 50px; margin:auto; width:840px;
+   font-family:Georgia,"Times New Roman",Times,serif; font-size:1.4em; }
+
+#prefooter {	
+    height: 90px; width: 840px; float: right; background:none repeat scroll 0 0 #EEEEEE;
+    border-top:1px solid #CCCCCC; border-bottom:1px solid #CCCCCC;}
+
+.footer-list-header {list-style-type: none;	font-weight : bold;	font-size:1.2em; }

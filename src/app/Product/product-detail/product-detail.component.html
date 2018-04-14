@@ -1,0 +1,28 @@
+<div>
+  <span style="float : left">
+    <img [src]="getImagePath(selectedProduct.id)" />
+  </span>
+  <div>
+    {{selectedProduct.Product.Price}}
+    <br /> {{selectedProduct.Product.BrandName}} {{selectedProduct.Product.Name}}
+    <br />
+    <p>
+      <select id="productsizes">
+          <option *ngFor="let item of selectedProduct.Product.productSizeOptions"
+       
+          [value]="item.id">
+           {{ item.Sizename }}
+         </option>
+      
+        <option>
+          XL
+        </option>
+        <option>
+          XXL
+        </option>
+      </select>
+      <input type="button" value="+ Add to cart" 
+      onclick="JavaScript:addProductToBasket();" />
+        </p>    
+  </div>
+</div>

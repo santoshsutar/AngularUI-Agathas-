@@ -1,0 +1,11 @@
+ul li.item-detail { float: left; width: 17em; border:1px solid #D1D1D1; margin-right : 2em; margin-bottom : 2em; }
+ul.items-list { width: 60em;list-style-type: none; padding:0px; margin:0px; }
+.item-productimage { border: medium none; height: 230px; width: 180px; text-decoration: none; }
+.item-productimage-link { border-style: none; text-decoration: none; width: 180px; }
+.item-productname { text-align:center; width: 180px; }
+.item-price {text-align:center; width: 180px; }
+.item-sortdropdown { font-size:1em; height:17px; margin:0 0 0 10px; }
+.item-displayoptions-sort { float:left; font-size:0.9em;  position:relative; }
+.item-displayoptions-pages { float:right; font-size:0.9em; position:relative; }
+/* Product Detail */
+.productsTitle {border-bottom:1px solid #D1D1D1; margin-bottom : 10px; }
