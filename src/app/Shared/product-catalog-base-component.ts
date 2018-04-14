@@ -6,7 +6,7 @@ export class ProductCatalogBaseComponent {
      */
     public GetCategories():CategoryView[] {
         let Categories :CategoryView[];
-        Categories=[{id:1,name:'Cat1'}];
+        Categories=[{Id:1,Name:'Cat1'}];
         return Categories;
     }
 }

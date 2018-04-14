@@ -6,7 +6,7 @@
       <ul class="items-list">
             <li class="item-detail" *ngFor="let product of getHomePageViewProducts().Products; let i = index">
 
-                  <a class="item-productimage-link" href="selectProduct(product)">
+                  <a class="item-productimage-link" [routerLink]="['/ProductDetail',product.Id]"  >
                         <img class="item-productimage" src="/assets/Images/{{product.Id}}.jpg" />
                   </a>
                   <div class="item-productname">

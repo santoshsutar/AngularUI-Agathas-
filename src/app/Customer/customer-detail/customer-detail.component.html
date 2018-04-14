@@ -1,0 +1,25 @@
+<h2>Your Details</h2>
+
+<form novalidate #form="ngForm" (ngSubmit)="PostCustomerView(form)">
+  <p>
+    <label for="FirstName">FirstName:</label>
+    <br />
+    <input class="form-control" name="FirstName" [(ngModel)]="customerView.FirstName" required />
+
+  </p>
+  <p>
+    <label for="SecondName">SecondName:</label>
+    <br />
+    <input class="form-control" name="SecondName" [(ngModel)]="customerView.SecondName" required />
+
+  </p>
+  <p>
+    <label for="Email">Email:</label>
+    <br />
+    <input class="form-control" name="Email" [(ngModel)]="customerView.Email" required />
+
+  </p>
+  <p>
+    <input type="submit" value="Save" />
+  </p>
+</form>

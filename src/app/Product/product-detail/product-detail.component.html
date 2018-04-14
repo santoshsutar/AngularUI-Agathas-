@@ -1,28 +1,21 @@
+<h2>
+  {{selectedProduct?.Product?.BrandName}}{{selectedProduct?.Product?.Name}}
+</h2>
 <div>
   <span style="float : left">
-    <img [src]="getImagePath(selectedProduct.id)" />
+    <img src="/assets/Images/{{selectedProduct?.Product?.Id}}.jpg" alt="no Image Found" />
   </span>
   <div>
-    {{selectedProduct.Product.Price}}
-    <br /> {{selectedProduct.Product.BrandName}} {{selectedProduct.Product.Name}}
+    {{ selectedProduct?.Product?.Price }}
+    <br /> {{selectedProduct?.Product?.BrandName}}{{selectedProduct?.Product?.Name}}
     <br />
     <p>
       <select id="productsizes">
-          <option *ngFor="let item of selectedProduct.Product.productSizeOptions"
-       
-          [value]="item.id">
-           {{ item.Sizename }}
-         </option>
-      
-        <option>
-          XL
-        </option>
-        <option>
-          XXL
+        <option *ngFor="let option of selectedProduct?.Product?.Products" [value]="option.Id">
+          {{ option.SizeName }}
         </option>
       </select>
-      <input type="button" value="+ Add to cart" 
-      onclick="JavaScript:addProductToBasket();" />
-        </p>    
+      <input type="button" value="+ Add to cart" (click)="addProductToBasket()" />
+    </p>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<h2>Your Orders</h2>
+<ul>
+    <li *ngFor="let order of orders?.Orders">
+        <p> {{order.Created | date:'short' }}
+            <a routerLink="/Payment/CreatePaymentFor" *ngIf="order.IsSubmitted==false">Pay</a>
+
+            <a [routerLink]="['/Order/Detail',order.Id]">View Detail</a>
+        </p>
+    </li>
+</ul>

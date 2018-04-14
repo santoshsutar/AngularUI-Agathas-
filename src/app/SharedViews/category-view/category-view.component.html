@@ -1,2 +1,6 @@
 <h2>Categories</h2>
-<a href="Product/GetProductsByCategory?categoryId=1">Trousers</a>
+<ul class="refine-attributes">
+    <li *ngFor="let cat of getCategories()">
+        <a [routerLink]="['/Product/GetProductsByCategory',cat.Id]">{{cat.Name}}</a>
+    </li>
+</ul>

@@ -1,0 +1,24 @@
+<h2>Confirm Order</h2>
+Delivery Address
+<select id="DeliveryAddress" name="DeliveryAddress" [(ngModel)]="orderConfirmationView?.Basket.DeliveryOptionId" >
+    <option *ngFor="let DeliveryAddress of orderConfirmationView?.DeliveryAddresses" [value]="DeliveryAddress.Id">
+        {{DeliveryAddress.Name}}
+    </option>
+</select>
+<a routerLink="/Checkout/AddDeliveryAddress">Create new address</a>
+
+<ul>
+    <li *ngFor="let item of orderConfirmationView?.Basket.Items">
+        {{item.Qty}} of {{item.ProductName}} at {{item.ProductPrice}}
+    </li>
+</ul>
+<p>Total: {{orderConfirmationView?.Basket.ItemsTotal}}
+</p>
+
+<p>DeliveryCharge: {{orderConfirmationView?.Basket.DeliveryCost}}
+</p>
+
+<p>Total: {{orderConfirmationView?.Basket.BasketTotal}}
+</p>
+
+<input id="Submit" type="submit" value="Place Order" (click)="PlaceOrder()"  />

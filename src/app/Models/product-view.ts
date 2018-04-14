@@ -5,5 +5,5 @@ export class ProductView {
     public BrandName: string;
     public Name: string;
     public Price: string;
-    public productSizeOptions: ProductSizeOption[];
+    public Products: ProductSizeOption[];
 }

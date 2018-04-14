@@ -1,0 +1,41 @@
+<div>
+  <div style="color: #D63301; background-color: #FFCCBA; 
+    padding:15px 10px 15px 50px;">
+  </div>
+  <h2>Don't have an internet account? Create an account with us</h2>
+  <div>
+    <form novalidate #form="ngForm" (ngSubmit)="registerAccount(form)">
+      <p>
+        <label for="Email">Email:</label>
+        <br />
+        <input class="form-control" name="Email" [(ngModel)]="accountRegister.Email" required />
+
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <br />
+        <input class="form-control" type="password" name="password" [(ngModel)]="accountRegister.Password" required />
+      </p>
+      <p>
+        <label for="confirmPassword">Confirm password:</label>
+        <br />
+        <input class="form-control" type="password" name="confirmPassword" [(ngModel)]="confirmPassword" required />
+
+      </p>
+      <p>
+        <label for="FirstName">First Name:</label>
+        <br />
+        <input class="form-control" name="FirstName" [(ngModel)]="accountRegister.FirstName" required />
+
+      </p>
+      <p>
+        <label for="SecondName">Second Name:</label>
+        <br />
+        <input class="form-control" name="SecondName" [(ngModel)]="accountRegister.SecondName" required />
+      </p>
+      <p>
+        <input type="submit" value="Register" />
+      </p>
+    </form>
+  </div>
+</div>

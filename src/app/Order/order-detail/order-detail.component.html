@@ -1,0 +1,24 @@
+<h2>Order # {{customerOrderView?.Order.Id}} placed on {{customerOrderView?.Order.Created | date:'short'}}
+</h2>
+<p *ngIf="customerOrderView?.Order.OrderHasBeenPaidFor==false">This order has not been paid.
+  <a routerLink="/Payment/CreatePaymentFor">Pay</a>
+</p>
+<ul>
+  <li *ngFor="let item of customerOrderView?.Order.Items">
+    {{item.Qty}} of {{item.ProductName}} ( {{item.ProductSizeName}}) at {{item.Price}}
+  </li>
+</ul>
+<p>Shipping Charge: {{customerOrderView?.Order.ShippingCharge}}</p>
+<p>Shipping Via: {{customerOrderView?.Order.ShippingServiceCourierName}} - {{customerOrderView?.Order.ShippingServiceDescription}}
+</p>
+<p>Total: {{customerOrderView?.Order.Total}}</p>
+
+<p>Delivery Address</p>
+
+{{customerOrderView?.Order.DeliveryAddress.AddressLine1}}
+<br /> {{customerOrderView?.Order.DeliveryAddress.AddressLine2}}
+<br /> {{customerOrderView?.Order.DeliveryAddress.City}}
+<br /> {{customerOrderView?.Order.DeliveryAddress.State}}
+<br /> {{customerOrderView?.Order.DeliveryAddress.ZipCode}}
+<br /> {{customerOrderView?.Order.DeliveryAddress.Country}}
+<br />

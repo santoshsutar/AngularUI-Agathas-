@@ -1,3 +1,18 @@
-<p>
-    <router-outlet></router-outlet>
-</p>
+<div id="MenuContent" style="background-color: white">
+    <div id="navigation">
+        <app-category-view>loadings..</app-category-view>
+    </div>
+</div>
+
+<div id="content" style="background-color: white">
+    <div *ngIf="pageName=='Home'">
+        <app-home>Loadings...</app-home>
+    </div>
+    <div *ngIf="pageName=='ProductDetail'" style="background-color: white">
+        <app-product-detail></app-product-detail>
+    </div>
+    <div *ngIf="pageName=='BasketDetail'" style="background-color: white">
+        <app-basket-view></app-basket-view>
+    </div>
+</div>
+<div style="clear: both;"></div>

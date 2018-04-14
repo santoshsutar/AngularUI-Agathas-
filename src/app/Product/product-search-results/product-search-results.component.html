@@ -1,8 +1,74 @@
-<div class="productsTitle">
-  <h2>Refine By</h2>
-</div>
-<div *ngFor="let refinementGroup of productSearchResultView.RefinementGroups">
-<h3>
-  {{ refinementGroup.Name }}
-</h3>
-</div>   
+<table style="background-color: white;width:100%">
+  <tr>
+    <td>
+      <div class="productsTitle" style="background-color: white">
+        <h2>Refine By</h2>
+      </div>
+    </td>
+    <td>
+      <div id="productResults">
+        <div class="productsTitle">
+          Home
+        </div>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="width: 15%">
+      <div>
+        <div *ngFor="let refinementGroup of productSearchResultView?.RefinementGroups" style="background-color: white">
+          <h3>
+            {{refinementGroup.Name }}
+          </h3>
+          <div class="refinement-box">
+            <ul class="refine-attributes">
+
+              <li *ngFor="let refinement of refinementGroup?.Refinements">
+                <a class="availableItem">
+                  {{refinement.Name}}
+                </a>
+             1` </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </td>
+    <td style="vertical-align: top">
+      <table>
+        <tr>
+          <td>
+              <div style="margin-bottom: 41px;">
+                  <span class="item-displayoptions-pages">products found
+                    <span id="numberOfProductsFound">{{productSearchResultView?.NumberOfTitlesFound}}</span>
+                    <span id="pageLinksTop">
+                      <a>1</a>           
+                    </span>
+                  </span>
+                </div>  
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <div id="items" style="border-width: 1px; padding: 0px; margin: 0px">
+                  <ul class="items-list">
+                        <li class="item-detail" *ngFor="let product of productSearchResultView?.Products; let i = index">
+            
+                              <a class="item-productimage-link" [routerLink]="['/ProductDetail',product.Id]"  >
+                                    <img class="item-productimage" src="/assets/Images/{{product.Id}}.jpg" />
+                              </a>
+                              <div class="item-productname">
+                                    {{product.Name}} </div>
+                              <div class="item-price">
+                                    {{product.Price}}</div>
+                        </li>
+                  </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>

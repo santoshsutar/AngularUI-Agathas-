@@ -1,0 +1,14 @@
+<div id="smoverlay" class="smoverlay"></div>
+<div id="basketSummary">
+  <a routerLink="/Basket/Detail">Your Basket</a>
+  <span class="basket-details">
+    <span id="basket-summary-text">
+      <div *ngIf="get1BasketSummaryView()?.NumberOfItems==0">
+        is empty
+      </div>
+      <div *ngIf="get1BasketSummaryView()?.NumberOfItems>0">
+        {{get1BasketSummaryView().NumberOfItems}} item(s) at {{get1BasketSummaryView().BasketTotal}}
+      </div>
+    </span>
+  </span>
+</div>

@@ -1,0 +1,37 @@
+<div id="main">
+  <div id="header">
+    <span>
+      <a routerLink="">
+        <img alt="Agatha's Clothing Store" src="/assets/Images/Structure/lg_logo.png" border="0" [routerLink]="['/home']" />
+      </a>
+    </span>
+  </div>
+
+  <div id="headerSummary">
+    <span class="basket-details">
+      <div *ngIf="isUserAuthenticated() else elseBlock" >
+          <a routerLink="/Customer/Detail">Your Account</a>
+          <a routerLink="/AccountLogOn/SignOut">Log Off</a>
+      </div>
+      <ng-template #elseBlock>
+        <div>
+           <a routerLink="/AccountRegister/Register">Create Account</a>
+          <a routerLink="/AccountLogOn/LogOn">Log On</a>
+        </div>
+      </ng-template>
+     
+    </span>
+    <div>
+      <app-basket-summary-view>
+
+      </app-basket-summary-view>
+    </div>
+  </div>
+  <div class="topBarContainer">
+    <div id="background" style="background-color: white; width: 100%" item-width="100%" >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-site-footer>
+  </app-site-footer>
+</div>

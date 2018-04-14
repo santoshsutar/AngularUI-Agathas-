@@ -1,0 +1,8 @@
+<h2>Delivery Addresses</h2>
+<a [routerLink]="['/Customer/AddDeliveryAddress']">Add new address
+</a>
+<ul>
+  <li *ngFor="let address of deliveryAddress">
+    <a [routerLink]="['/Customer/EditDeliveryAddress',address.Id]">{{address.Name}}</a>
+  </li>
+</ul>

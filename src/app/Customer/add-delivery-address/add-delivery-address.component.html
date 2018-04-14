@@ -1,0 +1,48 @@
+<h2>AddDeliveryAddress</h2>
+<form novalidate #form="ngForm" (ngSubmit)="Save(form)">
+  <p>
+    <label for="Name">Name:</label>
+    <br />
+    <input class="form-control" name="Name" [(ngModel)]="address.Name" required />
+
+  </p>
+  <p>
+    <label for="AddressLine1">AddressLine1:</label>
+    <br />
+    <input class="form-control" name="AddressLine1" [(ngModel)]="address.AddressLine1" required />
+
+  </p>
+  <p>
+    <label for="AddressLine2">AddressLine2:</label>
+    <br />
+    <input class="form-control" name="AddressLine2" [(ngModel)]="address.AddressLine2" required />
+
+  </p>
+  <p>
+    <label for="City">City:</label>
+    <br />
+    <input class="form-control" name="City" [(ngModel)]="address.City" required />
+
+  </p>
+  <p>
+    <label for="State">State:</label>
+    <br />
+    <input class="form-control" name="State" [(ngModel)]="address.State" required />
+
+  </p>
+  <p>
+    <label for="Country">Country:</label>
+    <br />
+    <input class="form-control" name="Country" [(ngModel)]="address.Country" required />
+
+  </p>
+  <p>
+    <label for="ZipCode">ZipCode:</label>
+    <br />
+    <input class="form-control" name="ZipCode" [(ngModel)]="address.ZipCode" required />
+
+  </p>
+  <p>
+    <input type="submit" value="Save" />
+  </p>
+</form>

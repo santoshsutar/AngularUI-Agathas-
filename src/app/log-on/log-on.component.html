@@ -1,0 +1,28 @@
+<h2>Log On</h2>
+<p>
+       {{ errorMessage }}
+  
+</p>
+<p>
+  Please enter your username and password.
+  <a routerLink="/AccountRegister/Register">Register</a>
+  if you don't have an account.
+</p>
+<h2>Login with an account created with us</h2>
+<form novalidate #form="ngForm" (ngSubmit)="logOn(form)">
+  <p>
+    <label for="Email">Email:</label>
+    <br />
+    <input class="form-control" name="Email" [(ngModel)]="user.Email" required />
+
+  </p>
+  <p>
+    <label for="password">Password:</label>
+    <br />
+    <input class="form-control" type="password" name="password" [(ngModel)]="user.Password" required />
+  </p>
+    
+  <p>
+    <input type="submit" value="Log On" />
+  </p>
+</form>

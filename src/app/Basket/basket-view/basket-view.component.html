@@ -1,0 +1,81 @@
+<h2>Your Basket</h2>
+<div id="overlay" class="overlay"></div>
+<div *ngIf="basketDetailView.Basket.Items.length == 0; else elseBlock"> You have no items in your basket.</div>
+<ng-template #elseBlock>
+  <div id="basketDisplay">
+    <table width="100%">
+      <tr>
+        <td>Product</td>
+        <td>Qty</td>
+        <td align="right">Price</td>
+        <td align="right">Total</td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <hr />
+        </td>
+      </tr>
+      <tr *ngFor="let item of basketDetailView.Basket.Items">
+        <td> {{item.ProductName}}> - {{item.ProductSizeName}}
+          <br />
+          <label (click)="removeItem(item.ProductId)" style=" text-decoration: underline; ">
+            remove this item</label>
+        </td>
+        <td>
+          <input class="itemQtyBox" [(ngModel)]="item.Qty" />
+        </td>
+        <td align="right">
+          {{item.ProductPrice}}
+        </td>
+        <td align="right">
+          {{item.LineTotal}}
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <label (click)="updateItemQtys()" style=" text-decoration: underline; ">
+            update</label>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td align="right" colspan="3">Basket: </td>
+        <td align="right">
+          {{basketDetailView.Basket.ItemsTotal}}
+        </td>
+      </tr>
+      <tr>
+        <td align="right" colspan="3">Shipping:
+          <select class="item-sortdropdown" name="ddlShippingService" (change)="onChange($event.target.value)" id="ddlShippingService"
+            [(ngModel)]="basketDetailView.Basket.DeliveryOptionId">
+            <option *ngFor="let deliveryOption of basketDetailView.DeliveryOptions" [value]="deliveryOption.Id">
+              {{deliveryOption.ShippingServiceDescription}}
+            </option>
+          </select>
+        </td>
+        <td align="right">
+          {{basketDetailView.Basket.DeliveryCost}}
+        </td>
+      </tr>
+      <tr>
+        <td align="right" colspan="3"> Total: </td>
+        <td align="right">
+          {{basketDetailView.Basket.BasketTotal}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"></td>
+        <td align="right">
+          <a routerLink="/Checkout/Checkout">Check Out</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</ng-template>
